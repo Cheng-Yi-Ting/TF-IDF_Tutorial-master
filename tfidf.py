@@ -182,16 +182,18 @@ def main():
     # bag_of_word => 所有關鍵字集合
     # set => 不重複元素集合
     tf_idf.set_bag_of_word(set(topK.keys()))
-    # # # 得到文章第1篇跟第11篇的向量
+    # # # 得到文章第1篇跟第2篇的向量
 
     vec1 = tf_idf.get_text_vector(0)
-    vec2 = tf_idf.get_text_vector(1)
+    vec2 = tf_idf.get_text_vector(2)
+    print('A文件向量:')
     print(vec1)
     # # # # 計算文件與文件的cosine similarity
+    print('B文件向量:')
     print(vec2)
     score1 = tf_idf.cosine_similarity(vec1, vec1)
     score2 = tf_idf.cosine_similarity(vec1, vec2)
-
+    print('A&B文件相似度:')
     print(score1, score2)
 
 
